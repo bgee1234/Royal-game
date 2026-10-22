@@ -1,0 +1,13 @@
+{
+  "name": "royal-game",
+  "version": "1.0.0",
+  "description": "ROYAL GAME sports and gaming platform",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "dotenv": "^16.4.7"
+  }
+}
