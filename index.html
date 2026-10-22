@@ -1,165 +1,278 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROYALGAME</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROYALGAME | Gaming</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0e13;
-      color: white;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background: #151b24;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #d4a72c;
-    }
+:root {
+  --gold: #f5c542;
+  --dark: #090b10;
+  --panel: #151923;
+  --text: #f5f5f5;
+  --muted: #a9afbd;
+}
 
-    header h1 {
-      margin: 0;
-      color: #f5c542;
-      font-size: 30px;
-    }
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
 
-    header p {
-      color: #b8c0cc;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 6%;
+  background: #10141c;
+  border-bottom: 1px solid #39301a;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px 5px;
-      background: #11161e;
-    }
+.logo {
+  color: var(--gold);
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.logo span {
+  color: white;
+}
 
-    .hero {
-      text-align: center;
-      padding: 55px 20px;
-      background: linear-gradient(145deg, #202b3b, #10131a);
-    }
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 13px;
+}
 
-    .hero h2 {
-      font-size: 30px;
-      color: #f5c542;
-    }
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background:
+    radial-gradient(ellipse at top, #473813 0%, #17140d 35%, #090b10 75%);
+}
 
-    .hero p {
-      color: #d0d5dd;
-      line-height: 1.6;
-    }
+.badge {
+  display: inline-block;
+  color: var(--gold);
+  border: 1px solid #80651e;
+  border-radius: 30px;
+  padding: 8px 14px;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 13px 25px;
-      background: #d4a72c;
-      color: #10131a;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.hero h1 {
+  font-size: clamp(34px, 8vw, 58px);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
 
-    .games {
-      padding: 25px 18px;
-      text-align: center;
-    }
+.hero h1 span {
+  color: var(--gold);
+}
 
-    .games h2 {
-      color: #f5c542;
-    }
+.hero p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto;
+}
 
-    .card {
-      background: #171e29;
-      border: 1px solid #303a49;
-      border-radius: 12px;
-      padding: 22px;
-      margin: 15px 0;
-    }
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: #101010;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 25px;
+}
 
-    .card h3 {
-      color: #f5c542;
-    }
+section.content {
+  padding: 35px 6%;
+}
 
-    .notice {
-      margin: 20px;
-      padding: 15px;
-      border: 1px solid #d4a72c;
-      border-radius: 10px;
-      color: #d0d5dd;
-      line-height: 1.6;
-    }
+.section-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
 
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: #151b24;
-      color: #aab2bf;
-    }
-  </style>
+.section-title span {
+  color: var(--gold);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #292f3b;
+  border-radius: 13px;
+  padding: 23px 15px;
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 17px;
+}
+
+.card h3 {
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.notice {
+  margin: 10px 6% 35px;
+  padding: 18px;
+  border: 1px solid #55451b;
+  background: #17140d;
+  color: #d9d1bc;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer {
+  background: #10141c;
+  padding: 25px 6%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  border-top: 1px solid #292f3b;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .menu a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 18px;
+  }
+
+  section.content {
+    padding: 28px 18px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>👑 ROYALGAME</h1>
-    <p>Byenveni nan mond jwèt la!</p>
-  </header>
-
-  <nav>
-    <a href="#akèy">Akèy</a>
-    <a href="#jwèt">Jwèt</a>
-    <a href="#kontak">Kontak</a>
+<header>
+  <div class="logo">👑 ROYAL<span>GAME</span></div>
+  <nav class="menu">
+    <a href="#home">Akèy</a>
+    <a href="#games">Jwèt</a>
+    <a href="#about">Enfòmasyon</a>
   </nav>
+</header>
 
-  <section class="hero" id="akèy">
-    <h2>JWE AK ROYALGAME</h2>
-    <p>Yon nouvo espas pou dekouvri jwèt ak amizman.</p>
-    <a href="#jwèt" class="button">Dekouvri jwèt yo</a>
+<main>
+  <section class="hero" id="home">
+    <div class="badge">★ BYENVENI SOU ROYALGAME ★</div>
+
+    <h1>ANTRE NAN<br><span>MOND JWÈT LA</span></h1>
+
+    <p>
+      Dekouvri yon nouvo espas pou jwèt,
+      konpetisyon ak divètisman sou telefòn
+      ou oswa sou òdinatè ou.
+    </p>
+
+    <a href="#games" class="button">DEKOUVRI JWÈT YO →</a>
   </section>
 
-  <section class="games" id="jwèt">
-    <h2>🎮 KATEGORI JWÈT YO</h2>
+  <section class="content" id="games">
+    <h2 class="section-title">JWÈT <span>YO</span></h2>
+    <p class="subtitle">
+      Dekouvri kategori nou prepare pou ou.
+    </p>
 
-    <div class="card">
-      <h3>⚽ Jwèt Espòtif</h3>
-      <p>Espas pou jwèt ki gen rapò ak espò.</p>
-    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">⚽</div>
+        <h3>Espò</h3>
+        <p>Yon espas pou dekouvri jwèt ak aktivite espòtif.</p>
+      </article>
 
-    <div class="card">
-      <h3>🎲 Jwèt Divètisman</h3>
-      <p>Yon espas pou dekouvri diferan jwèt.</p>
-    </div>
+      <article class="card">
+        <div class="icon">🎮</div>
+        <h3>Gaming</h3>
+        <p>Eksplore mond jwèt videyo ak divètisman.</p>
+      </article>
 
-    <div class="card">
-      <h3>🏆 Konpetisyon</h3>
-      <p>Prepare w pou dekouvri konpetisyon yo.</p>
+      <article class="card">
+        <div class="icon">🏆</div>
+        <h3>Konpetisyon</h3>
+        <p>Prepare w pou dekouvri konpetisyon ak defi.</p>
+      </article>
     </div>
   </section>
 
-  <div class="notice">
-    <strong>Enfòmasyon:</strong>
-    Vèsyon sa a se yon demonstrasyon.
-    Fonksyon kont, depo, retrè ak paryaj pa aktive.
+  <div class="notice" id="about">
+    <strong>ENFÒMASYON ENPÒTAN:</strong><br>
+    Sa a se premye vèsyon demonstrasyon ROYALGAME.
+    Kont itilizatè, bous, depo, retrè ak tranzaksyon
+    pa aktive. Nenpòt fonksyon paryaj ak lajan reyèl
+    dwe tann verifikasyon legal, sekirite ak otorizasyon
+    sèvis peman ki konsène yo.
   </div>
+</main>
 
-  <footer id="kontak">
-    <p>© 2026 ROYALGAME</p>
-    <p>Platfòm jwèt ak divètisman</p>
-  </footer>
+<footer>
+  <strong>👑 ROYALGAME</strong><br>
+  Platfòm jwèt ak divètisman<br>
+  © 2026 ROYALGAME — Tout dwa rezève.
+</footer>
 
 </body>
 </html>
